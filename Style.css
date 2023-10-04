@@ -11,14 +11,48 @@
     flex-shrink: 0;
 }
 
-main {
-    color: rgba(146, 192, 70, 0.26);
+/* desativa a barra horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
 }
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background: #F7FFF3;
+}
+
+/*
+tentei mais que tudo adicionar as flores, mas não consigo deixar sem
+o scroll e colorido. as variáveis ainda estão aqui embaixo caso queira
+tentar
+
+.background > img {
+    position: absolute;
+}
+
+.background > img:nth-child(1) {
+    margin-left: -412px;
+    margin-top: -100px;
+    width: 790px;
+    height: 790px;
+    transform: rotate(-5deg);
+}
+
+
+.background > img:nth-child(2) {
+    right: -445px;
+    top: 300px;
+    width: 790px;
+    height: 790px;
+    transform: rotate(5deg) scaleX(-1);
+}
+*/
 
 .header {
     width: 100vw;
     height: 134px;
-    flex-shrink: 0;
     background: #93C047;
 
     display: flex;
@@ -26,8 +60,7 @@ main {
     overflow: hidden;
 }
 
-.header h1 {
-
+.header > h1 {
     margin: 0 auto;
 
 
@@ -47,20 +80,28 @@ main {
     letter-spacing: 4.2px;
 }
 
-.header #logo {
-
+.header > #logo {
     margin-left: 2vw;
-
     width: 100px;
     height: auto;
-    flex-shrink: 0;
 }
 
-.header .imgConta {
-
+.header > .imgConta {
     margin-right: 2vw;
-
     width: 81px;
     height: 81px;
-    flex-shrink: 0;
+}
+
+.carrinho > div {
+    margin-right: 120px;
+    color: #92C046;
+    text-align: right;
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+.carrinho > div:nth-child(3) {
+    font-weight: 800;
 }
