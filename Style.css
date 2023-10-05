@@ -6,6 +6,7 @@ CORES:
 
 BRANCO: #FFFEF0
 VERDE:  #93C047
+BRANCO (BARRA DE PESQUISA): #F9FFF6
 */
 
 * {
@@ -105,9 +106,15 @@ tentar
     background: #FFFEF0;
 }
 
+.negrito {
+    font-weight: 800;
+}
+
+.carrinho {
+    position: relative;
+}
+
 #textoCarrinho {
-    margin-right: 15px;
-    margin-top: 10px;
     color: #93C047;
     text-align: right;
     font-family: Nunito;
@@ -115,16 +122,51 @@ tentar
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
-    position: relative;
-}
-.negrito {
-    font-weight: 800;
+    
+    right: 125px;
+    top: 8px;
 }
 
-.carrinho {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: end;
-    margin-top: 30px;
-    margin-right: 50px;
+#imagemCarrinho {
+    
+    right: 50px;
+}
+
+#textoCarrinho, #imagemCarrinho {
+    position: absolute;
+}
+
+.barraDePesquisa {
+    position: relative;
+}
+
+.barraDePesquisa input[type=text] {
+    background-color: #F9FFF6;
+    font-family: Nunito;
+    font-weight: normal;
+
+    outline: none;
+    border-radius: 50rem;
+    border: 3px solid #93C047;
+    resize: none;
+
+    position: absolute;
+    right: 29vw;
+    width: 40vw;
+
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 0px;
+    background-position: 10px 500px;
+}
+
+#lupa {
+    position: absolute;
+    right: 30vw;
+    top: 8px;
+}
+
+.pesquisaECarrinho {
+    position: relative;
+    top: 30px;
 }

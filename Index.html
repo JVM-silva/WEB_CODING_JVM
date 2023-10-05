@@ -26,20 +26,27 @@
     </div>
 
     <div class="main">
-        <div class="carrinho">
-            
-            <!--
-            por algum motivo além de meu conhecimento, colocar a tag para englobar
-            as 3 divs com a tag <a>, o display: flex; fica todo bugado e tortinho. se
-            alguém conseguir resolver, seria grato!
-            -->
-
-            <a href="./WIP.html"><img src="./Imagens/carrinho.png"></a>
-            <a href="./WIP.html">
-            <div id="textoCarrinho">
-                <div>0 itens</div>
-                <div class="negrito">Ver carrinho</div>
+        
+        <div class="pesquisaECarrinho">
+            <div class="barraDePesquisa">
+                <input name="barraPesquisaTopo" type="text" placeholder="O que deseja?">
+                <a href="./WIP.html"><img id="lupa" src="./Imagens/lupa.png"></a>
             </div>
+            
+            <a href="./WIP.html">
+                <div class="carrinho">  
+                    <!--
+                    por algum motivo além de meu conhecimento, colocar a tag para englobar
+                    as 3 divs com a tag <a>, o display: flex; fica todo bugado e tortinho. se
+                    alguém conseguir resolver, seria grato!
+                    -->
+
+                    <img id="imagemCarrinho" src="./Imagens/carrinho.png">
+                    <div id="textoCarrinho">
+                        <div>0 itens</div>
+                        <div class="negrito">Ver carrinho</div>
+                    </div>
+                </div>
             </a>
         </div>
         <!-- imagens que não consegui deixar bonitinhas -- info no style.css
