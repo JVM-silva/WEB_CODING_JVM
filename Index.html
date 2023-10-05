@@ -9,15 +9,14 @@
 <body>
     
     <div class="header">
-        <img id="logo" src="./Imagens/Logo.png" alt="Logo">
-        <h1>TROPIC-FLORES</h1>
-        
+        <div class="logo"><img src="./Imagens/Logo.png" alt="Logo"></div>
+        <div class="tituloHeader">TROPIC-FLORES</div>
         <div class="imgConta">
 
             <!-- caso haja um banco de dados, puxar imagem dele -->
             <img src="" onerror="this.style.display='none'">
 
-            <!-- caso não haja conta ou esteja indisponível -->
+            <!-- caso não haja conta ou esteja indisponível (ou só não tenha foto msm) -->
             <svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 81 81" fill="none">
                 <circle cx="40.5" cy="40.5" r="40.5" fill="#FFFEF0"/>
                 <circle cx="40.276" cy="29.4773" r="9.86864" stroke="#92C046" stroke-width="4"/>
@@ -27,11 +26,21 @@
     </div>
 
     <div class="main">
-        
         <div class="carrinho">
-            <img src="./Imagens/carrinho.png">
-            <div>0 itens</div>
-            <div>Ver carrinho</div>
+            
+            <!--
+            por algum motivo além de meu conhecimento, colocar a tag para englobar
+            as 3 divs com a tag <a>, o display: flex; fica todo bugado e tortinho. se
+            alguém conseguir resolver, seria grato!
+            -->
+
+            <a href="./WIP.html"><img src="./Imagens/carrinho.png"></a>
+            <a href="./WIP.html">
+            <div id="textoCarrinho">
+                <div>0 itens</div>
+                <div class="negrito">Ver carrinho</div>
+            </div>
+            </a>
         </div>
         <!-- imagens que não consegui deixar bonitinhas -- info no style.css
         <div class="background">

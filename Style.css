@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+/*
+CORES:
+
+BRANCO: #FFFEF0
+VERDE:  #93C047
+*/
+
 * {
 	margin: 0;
 	padding: 0;
@@ -9,6 +16,7 @@
 	font: inherit;
 	vertical-align: baseline;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 /* desativa a barra horizontal */
@@ -17,10 +25,8 @@ html, body {
     overflow-x: clip;
 }
 
-.main {
-    width: 100vw;
-    height: 100vh;
-    background: #F7FFF3;
+a, a:visited, a:hover, a:active {
+    color: inherit;
 }
 
 /*
@@ -56,11 +62,12 @@ tentar
     background: #93C047;
 
     display: flex;
+    flex-direction: row;
     align-items: center;
     overflow: hidden;
 }
 
-.header > h1 {
+.tituloHeader {
     margin: 0 auto;
 
 
@@ -80,28 +87,44 @@ tentar
     letter-spacing: 4.2px;
 }
 
-.header > #logo {
+.logo > img {
     margin-left: 2vw;
     width: 100px;
     height: auto;
 }
 
-.header > .imgConta {
+.imgConta {
     margin-right: 2vw;
     width: 81px;
     height: 81px;
 }
 
-.carrinho > div {
-    margin-right: 120px;
-    color: #92C046;
+.main {
+    width: 100vw;
+    height: 100vh;
+    background: #FFFEF0;
+}
+
+#textoCarrinho {
+    margin-right: 15px;
+    margin-top: 10px;
+    color: #93C047;
     text-align: right;
     font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
+    position: relative;
 }
-.carrinho > div:nth-child(3) {
+.negrito {
     font-weight: 800;
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    margin-top: 30px;
+    margin-right: 50px;
 }
