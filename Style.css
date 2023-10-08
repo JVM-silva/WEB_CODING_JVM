@@ -174,11 +174,11 @@ tentar
 
     position: absolute;
     right: 29vw;
-    width: 40vw;
+    width: calc(40vw - 50px);
 
     padding: 10px;
     padding-left: 15px;
-    padding-right: 0px;
+    padding-right: 50px;
     background-position: 10px 500px;
 }
 
