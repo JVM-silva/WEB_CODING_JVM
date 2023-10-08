@@ -5,7 +5,7 @@
     --branco-geral: #FFFEF0;
     --verde-geral: #93C047;
     --branco-barra-pesquisa: #F9FFF6;
-    --verde-placeholder-barra-pesquisa: #405320;
+    --verde-barra-pesquisa: #699435;
 }
 
 * {
@@ -163,6 +163,7 @@ tentar
 
 .barraDePesquisa input[type=text] {
     background-color: var(--branco-barra-pesquisa);
+    color: var(--verde-barra-pesquisa);
     font-family: Nunito;
     font-weight: normal;
 
@@ -188,7 +189,6 @@ tentar
 }
 
 .barraDePesquisa > ::placeholder {
-    color: var(--verde-placeholder-barra-pesquisa);
     opacity: 0.5;
     font-style: italic;
 }
@@ -213,6 +213,28 @@ tentar
 #chatBubble:hover {
     cursor: pointer;
     transform: scale(110%);
+}
+
+/* PROMOÇÕES */
+
+.promocoes {
+    width: 100vw;
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+#promoBanner, #promoFundo, #promoTexto {
+    position: absolute;
+}
+
+#promoBanner {
+    width: 428px;
+    height: 144px;
+}
+
+#promoTexto {
+    transform: translate(81px, -35px);
 }
 
 /* RESPONSIVIDADE */
