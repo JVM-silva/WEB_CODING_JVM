@@ -154,12 +154,12 @@ tentar
     padding-left: 10px;
 
     position: absolute;
-    right: 115px;
+    right: calc(150px);
     top: 50px;
 
     border-radius: 5px;
 
-    opacity: 0;
+    opacity: 1;
     transform: translateY(5px);
     transition: transform 0.15s ease-in, opacity 0.15s;
 }
@@ -320,5 +320,9 @@ tentar
 
     #imagemCarrinho {
         right: 10vw;
+    }
+
+    loginText {
+        
     }
 }
