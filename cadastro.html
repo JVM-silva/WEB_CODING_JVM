@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    <style>
+        .header {
+            justify-content: center;
+        }
+        .logo > img {
+            position: static;
+        }
+        .tituloHeader {
+            margin-left: 50px;
+        }
+
+        .main {
+            width: auto;
+            height: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .titulo {
+            color: var(--verde-geral);
+            font-size: 64px;
+            font-family: Koulen;
+            text-align: center;
+        }
+
+        .texto {
+            font-family: Nunito;
+            font-size: 20px;
+            color: var(--verde-geral);
+        }
+
+        #textoVoltar {
+            position: absolute;
+            left: 30px;
+            top: 170px;
+        }
+        #textoVoltar {
+            transition: transform 0.15s ease-out;
+        }
+        #textoVoltar:hover {
+            transform: translateY(-5px);
+        }
+
+        .caixaTexto {
+            font-size: 20px;
+            
+            padding: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 20rem;
+            margin: 10px;
+        }
+
+        .botao { 
+            margin-top: 15px;
+
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            transition: transform 0.15s ease-out;
+        }
+
+        .botao:hover {
+            transform: scale(110%);
+        }
+
+        #cadastrar {
+            font-family: Nunito;
+            font-size: 20px;
+            text-align: center;
+            color: var(--verde-geral);
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <section title="header">
+        <a href="index.html" class="header">
+            <div class="logo"><img src="./Imagens/IconesSite/Logo.png" alt="Logo"></div>
+            <div class="tituloHeader">TROPIC-FLORES</div>
+        </a>
+    </section>
+
+    <section class="main">
+        <a id="textoVoltar" href="index.html"><h1 class="texto negrito">< VOLTAR</h1></a>
+        <h1 class="titulo">CADASTRO</h1>
+
+        <input class="input caixaTexto" type="text" placeholder="Nome de usuário">
+        <input class="input caixaTexto" type="text" placeholder="E-mail">
+        <input class="input caixaTexto" type="password" placeholder="Senha">
+        <input class="input caixaTexto" type="password" placeholder="Confirmar senha">
+
+        <a href="index.html"><button class="botao negrito">CRIAR CONTA</button></a>
+        
+        <div id="cadastrar">
+            <div id="textoCadastro">Já possui conta?</div>
+            <a href="login.html"><div id="textoCadastro" class="negrito">Acesse aqui!</div></a>
+        </div>
+
+        <div class="chatbot">
+            <a>
+                <img id="chatBubble" src="./Imagens/IconesSite/chatbot.svg">
+            </a>
+        </div>
+    </section>
+</body>
+</html>

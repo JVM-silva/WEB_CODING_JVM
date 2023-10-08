@@ -3,6 +3,7 @@
 
 :root {
     --branco-geral: #FFFEF0;
+    --preto-geral: #1b3f12;
     --verde-geral: #93C047;
     --branco-barra-pesquisa: #F9FFF6;
     --verde-barra-pesquisa: #699435;
@@ -33,6 +34,30 @@ a, a:visited, a:hover, a:active {
     font-weight: 800;
 }
 
+.input {
+    background-color: var(--branco-barra-pesquisa);
+    color: var(--verde-barra-pesquisa);
+    font-family: Nunito;
+    font-weight: normal;
+    outline: none;
+    border-radius: 50rem;
+    border: 3px solid var(--verde-geral);
+    resize: none;
+}
+
+.botao {
+    color: var(--branco-geral) !important;
+    font-size: 24px;
+    font-family: Nunito;
+
+    border: none;
+    border-radius: 50rem;
+    background-color: var(--verde-geral);
+}
+
+.botao:hover {
+    cursor: pointer;
+}
 
 /* FLORES FUNDO */
 
@@ -113,13 +138,44 @@ tentar
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.loginText {
+    background: var(--preto-geral);
+    color: var(--branco-geral);
+
+    font-family: Nunito;
+    font-size: 15px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    position: absolute;
+    right: 115px;
+    top: 50px;
+
+    border-radius: 5px;
+
+    opacity: 0;
+    transform: translateY(5px);
+    transition: transform 0.15s ease-in, opacity 0.15s;
+}
+
+.botaoConta:hover .loginText {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.15s ease-out 0.5s, opacity 0.25s 0.5s;
+    
 }
 
 /* CORPO */
 
 .main {
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     background: var(--branco-geral);
 }
 
@@ -162,16 +218,6 @@ tentar
 }
 
 .barraDePesquisa input[type=text] {
-    background-color: var(--branco-barra-pesquisa);
-    color: var(--verde-barra-pesquisa);
-    font-family: Nunito;
-    font-weight: normal;
-
-    outline: none;
-    border-radius: 50rem;
-    border: 3px solid var(--verde-geral);
-    resize: none;
-
     position: absolute;
     right: 29vw;
     width: calc(40vw - 50px);
@@ -255,6 +301,10 @@ tentar
 
     #lupa {
         right: 31vw;
+    }
+
+    .loginText {
+        display: none;
     }
 }
 

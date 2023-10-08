@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Tropic-Flores - Erro</title>
 </head>
 <style>
@@ -20,19 +21,16 @@
     }
 
     .texto {
-        color: #93C047;
+        margin-top: 50px;
+
+        color: var(--verde-geral);
+        font-size: 30px;
         font-family: Nunito;
         text-align: center;
     }
     
     .botao {
-        color: #FFFEF0;
-        font-size: 24px;
-        font-weight: bold;
-
-        border: none;
-        border-radius: 50rem;
-        background-color: #93C047;
+        margin: 30px;
 
         padding-left: 20px;
         padding-right: 20px;
@@ -44,18 +42,17 @@
     }
 
     .botao:hover {
-        cursor: pointer;
         transform: scale(110%);
     }
 
 </style>
 <body>
     <div>
-        <h1 class="texto">
+        <h1 class="texto negrito">
             Ops, parece esta página ainda não está pronta. Volte mais tarde!
         </h1>
         <a href="index.html">
-            <button class="texto botao">
+            <button class="botao texto negrito">
                 VOLTAR AO INICIO
             </button>
         </a>
