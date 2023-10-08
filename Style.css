@@ -154,12 +154,12 @@ tentar
     padding-left: 10px;
 
     position: absolute;
-    right: calc(150px);
+    right: calc(100px + 0.5vw);
     top: 50px;
 
     border-radius: 5px;
 
-    opacity: 1;
+    opacity: 0;
     transform: translateY(5px);
     transition: transform 0.15s ease-in, opacity 0.15s;
 }
@@ -174,8 +174,8 @@ tentar
 /* CORPO */
 
 .main {
-    width: auto;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     background: var(--branco-geral);
 }
 
@@ -263,24 +263,25 @@ tentar
 
 /* PROMOÇÕES */
 
-.promocoes {
-    width: 100vw;
+.promoTitulo {
+    position: absolute;
     margin-top: 120px;
+    
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    
     display: flex;
     justify-content: center;
 }
 
-#promoBanner, #promoFundo, #promoTexto {
+#promoFundo {
     position: absolute;
 }
 
-#promoBanner {
-    width: 428px;
-    height: 144px;
-}
-
 #promoTexto {
-    transform: translate(81px, -35px);
+    position: absolute;
+    transform: translateY(-25%)
 }
 
 /* RESPONSIVIDADE */
@@ -299,12 +300,20 @@ tentar
         right: 6vw;
     }
 
+    .barraDePesquisa > ::placeholder {
+        font-size: 12px;
+    }
+
     #lupa {
         right: 31vw;
     }
 
     .loginText {
         display: none;
+    }
+
+    .promoTitulo {
+        transform: scale(60%) translateX(-80%);
     }
 }
 
@@ -322,7 +331,7 @@ tentar
         right: 10vw;
     }
 
-    loginText {
-        
+    .loginText {
+        right: 110px;
     }
 }
