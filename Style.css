@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-/*
-CORES:
-
-BRANCO: #FFFEF0
-VERDE:  #93C047
-BRANCO (BARRA DE PESQUISA): #F9FFF6
-*/
+:root {
+    --branco-geral: #FFFEF0;
+    --verde-geral: #93C047;
+    --branco-barra-pesquisa: #F9FFF6;
+    --verde-placeholder-barra-pesquisa: #405320;
+}
 
 * {
 	margin: 0;
@@ -29,6 +28,13 @@ html, body {
 a, a:visited, a:hover, a:active {
     color: inherit;
 }
+
+.negrito {
+    font-weight: 800;
+}
+
+
+/* FLORES FUNDO */
 
 /*
 tentei mais que tudo adicionar as flores, mas não consigo deixar sem
@@ -57,28 +63,25 @@ tentar
 }
 */
 
+/* CABEÇALHO */
 .header {
     width: 100vw;
     height: 134px;
-    background: #93C047;
+    background: var(--verde-geral);
 
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
     overflow: hidden;
 }
 
 .tituloHeader {
-    margin: 0 auto;
 
+    flex-direction: row;
+    justify-content: center;
 
-    width: 507px;
-    height: 86px;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-shrink: 0;
-
-    color: #FFFEF0;
+    color: var(--branco-geral);
     text-align: center;
     font-family: Koulen;
     font-size: 84px;
@@ -89,33 +92,48 @@ tentar
 }
 
 .logo > img {
-    margin-left: 2vw;
+    position: absolute;
+    top: 0.85rem;
+    left: 2.5vw;
     width: 100px;
     height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imgConta {
-    margin-right: 2vw;
+    position: absolute;
+    right: 2.5vw;
+    top: 1.6rem;
     width: 81px;
-    height: 81px;
+    height: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* CORPO */
 
 .main {
     width: 100vw;
     height: 100vh;
-    background: #FFFEF0;
+    background: var(--branco-geral);
 }
 
-.negrito {
-    font-weight: 800;
-}
+/* CARRINHO */
 
 .carrinho {
     position: relative;
+    display: flex;
+    flex-direction: flex-end;
+    justify-content: center;
 }
 
 #textoCarrinho {
-    color: #93C047;
+    color: var(--verde-geral);
     text-align: right;
     font-family: Nunito;
     font-size: 18px;
@@ -124,11 +142,12 @@ tentar
     line-height: 100%;
     
     right: 125px;
-    top: 8px;
+    top: 4px;
 }
 
 #imagemCarrinho {
-    
+    width: 55px;
+    height: auto;
     right: 50px;
 }
 
@@ -136,18 +155,20 @@ tentar
     position: absolute;
 }
 
+/* BARRA DE PESQUISA */
+
 .barraDePesquisa {
     position: relative;
 }
 
 .barraDePesquisa input[type=text] {
-    background-color: #F9FFF6;
+    background-color: var(--branco-barra-pesquisa);
     font-family: Nunito;
     font-weight: normal;
 
     outline: none;
     border-radius: 50rem;
-    border: 3px solid #93C047;
+    border: 3px solid var(--verde-geral);
     resize: none;
 
     position: absolute;
@@ -163,10 +184,69 @@ tentar
 #lupa {
     position: absolute;
     right: 30vw;
-    top: 8px;
+    top: 9px;
+}
+
+.barraDePesquisa > ::placeholder {
+    color: var(--verde-placeholder-barra-pesquisa);
+    opacity: 0.5;
+    font-style: italic;
 }
 
 .pesquisaECarrinho {
     position: relative;
     top: 30px;
+}
+
+/* CHATBOT */
+
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#chatBubble {
+    transition: transform 0.25s ease;
+}
+
+#chatBubble:hover {
+    cursor: pointer;
+    transform: scale(110%);
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 550px) {
+    
+    .tituloHeader {
+        display: none;
+    }
+
+    .logo > img, .imgConta {
+        position: static;
+    }
+
+    #imagemCarrinho {
+        right: 6vw;
+    }
+
+    #lupa {
+        right: 31vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .tituloHeader {
+        font-size: 9vw;
+    }
+    
+    #textoCarrinho {
+        display: none;
+    }
+
+    #imagemCarrinho {
+        right: 10vw;
+    }
 }
