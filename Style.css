@@ -146,6 +146,7 @@ tentar
     color: var(--branco-geral);
 
     font-family: Nunito;
+    text-align: center;
     font-size: 15px;
 
     padding-top: 5px;
@@ -154,7 +155,7 @@ tentar
     padding-left: 10px;
 
     position: absolute;
-    right: calc(100px + 0.5vw);
+    right: calc(2.5vw + 10px);
     top: 50px;
 
     border-radius: 5px;
@@ -329,9 +330,5 @@ tentar
 
     #imagemCarrinho {
         right: 10vw;
-    }
-
-    .loginText {
-        right: 110px;
     }
 }
