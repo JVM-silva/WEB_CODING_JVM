@@ -3,10 +3,11 @@
 
 :root {
     --branco-geral: #FFFEF0;
-    --preto-geral: #1b3f12;
+    --preto-geral: #28551c;
     --verde-geral: #93C047;
     --branco-barra-pesquisa: #F9FFF6;
     --verde-barra-pesquisa: #699435;
+
 }
 
 * {
@@ -30,6 +31,15 @@ a, a:visited, a:hover, a:active {
     color: inherit;
 }
 
+.texto {
+    font-family: Nunito;
+    color: var(--verde-geral);
+}
+
+.italico {
+    font-style: italic;
+}
+
 .negrito {
     font-weight: 800;
 }
@@ -43,6 +53,11 @@ a, a:visited, a:hover, a:active {
     border-radius: 50rem;
     border: 3px solid var(--verde-geral);
     resize: none;
+}
+
+.input::placeholder {
+    font-style: italic;
+    opacity: 0.5;
 }
 
 .botao {
@@ -166,7 +181,7 @@ tentar
 }
 
 .botaoConta:hover .loginText {
-    opacity: 1;
+    opacity: 0.8;
     transform: translateY(0px);
     transition: transform 0.15s ease-out 0.5s, opacity 0.25s 0.5s;
     
@@ -223,21 +238,28 @@ tentar
     right: 29vw;
     width: calc(40vw - 50px);
 
+    color: var(--branco-geral);
+    background-color: var(--verde-geral);
+
     padding: 10px;
     padding-left: 15px;
     padding-right: 50px;
     background-position: 10px 500px;
 }
 
+.barraDePesquisa input[type=text]::placeholder {
+    color: var(--branco-geral);
+    opacity: 1;
+    font-weight: 250;
+}
+
 #lupa {
     position: absolute;
     right: 30vw;
     top: 9px;
-}
-
-.barraDePesquisa > ::placeholder {
-    opacity: 0.5;
-    font-style: italic;
+    
+    /* numeros completamente aleatorios */
+    filter: saturate(0.05) brightness(1.7);
 }
 
 .pesquisaECarrinho {
@@ -265,25 +287,22 @@ tentar
 /* PROMOÇÕES */
 
 .promoTitulo {
-    position: absolute;
-    margin-top: 120px;
-    
-    width: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    
+    width: 100%;
+    height: 300px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }
 
-#promoFundo {
+#promoFundo, #promoTexto {
     position: absolute;
 }
 
 #promoTexto {
-    position: absolute;
-    transform: translateY(-25%)
+    transform: translateY(-10px);
 }
+
 
 /* RESPONSIVIDADE */
 
@@ -314,7 +333,7 @@ tentar
     }
 
     .promoTitulo {
-        transform: scale(60%) translateX(-80%);
+        transform: scale(70%);
     }
 }
 
