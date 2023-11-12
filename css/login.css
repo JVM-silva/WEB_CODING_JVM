@@ -1,0 +1,11 @@
+.titulo-header {
+    font-family: Koulen;
+    color: var(--branco);
+    font-size: 8vmin;
+    margin-left: 10vmin
+}
+
+.header > a {
+    display: flex;
+    align-items: center;
+}

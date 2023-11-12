@@ -1,0 +1,35 @@
+body {
+    width: 50%;
+    
+    & > div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+button {
+    transition: transform 0.15s ease-in-out;
+
+    &:hover {
+        transform: scale(110%);
+    }
+}
+
+h1 {
+    width: 100%;
+
+    margin-bottom: 50px;
+    text-align: center;
+
+    font-size: 3rem;
+    font-family: Nunito;
+    font-weight: bold;
+    
+    color: var(--verde);
+}

@@ -3,77 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/index.js"></script>
     <title>Tropic-Flores</title>
 </head>
 <body>
-    
-    <section class="header">
-        <div class="logo"><img src="./Imagens/IconesSite/Logo.png" alt="Logo" draggable="false"></div>
-        <div class="tituloHeader">TROPIC-FLORES</div>
-        <a href="./login.html" class="botaoConta">
-            <div class="imgConta">
-
-                <!-- caso haja um banco de dados, puxar imagem dele -->
-                <img src="" onerror="this.style.display='none'" draggable="false">
-
-                <!-- caso não haja conta ou esteja indisponível (ou só não tenha foto msm) -->
-                <img src="Imagens/IconesSite/conta.svg" draggable="false">
-            </div>
-            <div class="loginText">
-                Entrar
-            </div>
-        </a>
-    </section>
-
-    <section class="main">
-        
-        <div class="pesquisaECarrinho">
-            <div class="barraDePesquisa">
-                <input class="input" type="text" placeholder="O que deseja?">
-                <a href="./WIP.html"><img id="lupa" src="./Imagens/IconesSite/lupa.svg"></a>
+    <section>
+        <div class="header">
+            <img class="logo" src="./imagens/IconesSite/logo.png" draggable="false">
+            
+            <div id="caixa-de-pesquisa">
+                <input id="input-header" placeholder="O que deseja?">
+                <a href="./WIP.html" id="botao-lupa">
+                    <img id="img-lupa" src="./imagens/IconesSite/lupa.svg" draggable="false">
+                </a>
             </div>
             
-            <a href="./WIP.html">
-                <div class="carrinho">  
-                    <!--
-                    por algum motivo além de meu conhecimento, colocar a tag para englobar
-                    as 3 divs com a tag <a>, o display: flex; fica todo bugado e tortinho. se
-                    alguém conseguir resolver, seria grato!
-                    -->
-
-                    <img id="imagemCarrinho" src="./Imagens/IconesSite/carrinho.svg" draggable="false">
-                    <div id="textoCarrinho">
-                        <div>0 itens</div>
-                        <div class="negrito">Ver carrinho</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="promocoes">
-            <div class="promoTitulo">
-                <img id="promoFundo" src="./Imagens/IconesSite/PromoBanner.svg" draggable="false">
-                <img id="promoTexto" src="./Imagens/IconesSite/PromoTexto.svg" draggable="false">
+            <div class="conta">
+                <a id="botao-conta" href="./login.html">
+                    <img id="img-conta" src="./imagens/IconesSite/conta.svg" draggable="false">
+                </a>
             </div>
         </div>
 
-        <div class="chatbot">
-            <a>
-                <img id="chatBubble" src="./Imagens/IconesSite/chatbot.svg" draggable="false">
-            </a>
+        <div class="sub-menu">
+            <div class="dropdown">Todos<img id="setinha" src="./Imagens/IconesSite/arrow.svg" draggable="false"></div>
+            <div class="option"><a href="./WIP.html">Promoções</a></div>
+            <div class="option"><a href="./WIP.html">Orquídeas</a></div>
+            <div class="option"><a href="./WIP.html">Antúrios</a></div>
+            <div class="option"><a href="./WIP.html">Helicônias</a></div>
+            <div class="option"><a href="./WIP.html">Bromélias</a></div>
+            <div class="option"><a href="./WIP.html">Exóticas</a></div>
+            <div class="option"><a href="./WIP.html">Novidades</a></div>
+            <div class="option"><a href="./WIP.html">Em alta</a></div>
         </div>
-
-                
-        <!-- imagens que não consegui deixar bonitinhas -- info no style.css
-        <div class="background">
-            <img src="./Imagens/EntalheDoBackground/florCoisada1.png" onerror="this.style.display='none'" draggable="false">
-            <img src="./Imagens/EntalheDoBackground/florCoisada1.png" onerror="this.style.display='none'" draggable="false">
-        </div>
-        -->
-
     </section>
 
-    <section class="footer"></section>
+    <section>
+        <div class="chatbot">
+            <img src="./Imagens/IconesSite/chatbot.svg">
+        </div>
+    </section>
 </body>
 </html>

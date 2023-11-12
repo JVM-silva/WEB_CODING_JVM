@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+:root {
+    --branco: #FFFEF0;
+    --preto: #28551c;
+    --verde: #93C047;
+    --verde-escuro: #76A63B;
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+/* desativa a barra horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* desativa cores da tag 'a' */
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+
+/* barra de pesquisa global */
+input {
+    padding: 0.5vmin;
+    padding-left: 1.5vmin;
+    background-color: var(--branco);
+
+    font-family: Nunito;
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: var(--verde-escuro);
+
+    border-radius: 50rem;
+    border: 0.4vmin solid var(--verde);
+    outline: none;
+
+    &::placeholder {
+        opacity: 0.5;
+        font-weight: 0;
+        font-style: italic;
+        color: var(--verde-escuro);
+    }
+}
+
+/* botao global */
+button {
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 1.15rem;
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 1rem 1.5rem;
+    border-radius: 50rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/* =-=-=-=-=- HEADER -=-=-=-=-= */
+.header {
+    width: 100vw;
+    height: 12vmin;
+    background-color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo, #img-conta, #botao-conta {
+    width: 10vmin;
+}
+
+/* caixa de pesquisa do header */
+#caixa-de-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#caixa-de-pesquisa > input {
+    width: 50vw;
+    height: 3.5vmin;
+    border: none;
+}
+
+#botao-lupa {
+    position: absolute;
+}
+
+#img-lupa {
+    position: absolute;
+    top: -1.7vmin;
+    right: 0.6vmin;
+    width: 3.5vmin;
+}
+
+/* conta */
+.conta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botao-conta {
+    height: 10vmin;
+}
+
+/* =-=-=-=-=- SUB MENU -=-=-=-=-= */
+
+.sub-menu {
+    width: 100vw;
+    height: 4vmin;
+    background-color: var(--verde-escuro);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    color: var(--branco);
+    font-family: 'Nunito Sans';
+    font-size: 1.8vmin;
+    text-align: center;
+}
+
+.sub-menu > div {
+    padding: 0 1vmin;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    transition: background-color 0.15s ease-in, color 0.15s ease-in;
+    
+    &:hover {
+       background-color: var(--branco);
+       color: var(--verde);
+    }
+}
+
+.dropdown > #setinha {
+    height: 0.9vmin;
+    margin-left: 0.5vmin;
+    padding-top: 0.5vmin;
+}
+
+.chatbot {
+    position: fixed;
+    right: 2vmin;
+    bottom: 2vmin;
+
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(115%);
+    }
+
+    & > img {
+        width: 4rem;
+    }
+}
+
+/* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
+@media screen and (max-width: 450px) {
+    .sub-menu {
+        display: none;
+    }
+}
