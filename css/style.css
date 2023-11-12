@@ -159,11 +159,15 @@ button {
 }
 
 .chatbot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     right: 2vmin;
     bottom: 2vmin;
 
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, opacity 0.2s;
 
     &:hover {
         transform: scale(115%);
