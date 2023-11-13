@@ -1,3 +1,7 @@
+.negrito {
+    font-weight: bold;
+}
+
 .titulo-header {
     font-family: Koulen;
     color: var(--branco);
@@ -8,4 +12,59 @@
 .header > a {
     display: flex;
     align-items: center;
+}
+
+.conteudo-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+        margin-top: 3vmin;
+    }
+}
+
+#login-txt {
+    margin-bottom: -2vmin;
+    font-family: Koulen;
+    color: var(--verde);
+    font-size: 10vmin;
+}
+
+.form {
+    width: 25vw;
+    padding: 2vmin 1.5vmin;
+    border-radius: 2vmin;
+}
+
+#botao-login {
+    font-family: Koulen;
+    font-weight: normal;
+    font-size: 5vmin;
+    padding: 0 7vmin;
+
+    transition: transform 0.25s ease-in-out;
+    &:hover {
+        transform: scale(110%);
+    }
+}
+
+div > p:not(#login-txt) {
+    font-family: Nunito;
+    font-size: 20px;
+    color: var(--verde-escuro);
+    font-weight: 200;
+}
+
+#esqueceu-senha {
+    margin-top: 2vmin;
+}
+
+#criar-conta {
+    margin-top: 1vmin;
 }

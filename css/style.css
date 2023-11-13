@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 :root {
+    --fundo: #F7FFF3;
     --branco: #FFFEF0;
     --preto: #28551c;
     --verde: #93C047;
@@ -25,6 +26,7 @@
 html, body {
     max-width: 100%;
     overflow-x: clip;
+    background-color: var(--fundo);
 }
 
 /* desativa cores da tag 'a' */
@@ -73,7 +75,7 @@ button {
 /* =-=-=-=-=- HEADER -=-=-=-=-= */
 .header {
     width: 100vw;
-    height: 12vmin;
+    height: 13vmin;
     background-color: var(--verde);
     display: flex;
     align-items: center;
