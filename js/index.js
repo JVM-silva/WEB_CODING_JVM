@@ -1,19 +1,29 @@
 $(document).ready(function() {
     
     // chatbot botão
-    let chatbot = false;
-    const chatbotButton = $('.chatbot');
-    chatbotButton.on('click', function() {
-        chatbot = !chatbot;
-        const chatbotOpen = $("#chatbot-open");
-        const chatbotClosed = $("#chatbot-closed");
+    var cbOpened = false;
+    let cbBtn = $('.chatbot');
+    let cbCurr = $('#chatbot-current');
+    let cbBelow = $('#chatbot-below');
 
-        if (chatbot) {
-            chatbotClosed.css('display', 'none');
-            chatbotOpen.css('display', 'inline');
+    cbBtn.click(() => {
+        // alterna a boolean
+        cbOpened = !cbOpened;
+        
+        // pega a imagem que deve ser trocada
+        let selectedPath;
+        let time = 250; // duração da animação, em milissegundos.
+        if (cbOpened) {
+            selectedPath = './Imagens/IconesSite/chatbotselecionado.svg';
         } else {
-            chatbotOpen.css('display', 'none');
-            chatbotClosed.css('display', 'inline');
+            selectedPath = './Imagens/IconesSite/chatbot.svg';
         }
-    })
+        
+        // troca a imagem
+        cbBelow.attr('src', selectedPath);
+        cbCurr.fadeOut(time, () => {
+            cbCurr.attr('src', selectedPath);
+            cbCurr.fadeIn(0);
+        });
+    });
 });

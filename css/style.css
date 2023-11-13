@@ -160,27 +160,39 @@ button {
 
 .chatbot {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
+    width: 5rem;
+    height: 5rem;
     position: fixed;
-    right: 2vmin;
     bottom: 2vmin;
+    right: 2vmin;
 
-    transition: transform 0.2s ease-in-out, opacity 0.2s;
+    transition: transform 150ms ease-in-out;
 
     &:hover {
-        transform: scale(115%);
+        transform: scale(110%);
     }
 
     & > img {
-        width: 4rem;
+        width: inherit;
+        height: inherit;
+        position: absolute;
     }
 }
 
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
+    .header {
+        height: 15vmin;
+    }
+
     .sub-menu {
         display: none;
+    }
+
+    .chatbot {
+        width: 15vmin;
+        height: 15vmin;
+        bottom: 5vmin;
+        right: 5vmin;
     }
 }
