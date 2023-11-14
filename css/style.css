@@ -149,8 +149,17 @@ button {
     transition: background-color 0.15s ease-in, color 0.15s ease-in;
     
     &:hover {
-       background-color: var(--branco);
-       color: var(--verde);
+        background-color: var(--branco);
+        color: var(--verde);
+
+        & > #setinha {
+            /*
+            filtro para mudar cor de svg via CSS.
+            fonte: https://codepen.io/sosuke/pen/Pjoqqp
+            */
+            filter: brightness(0) saturate(100%) /* transformar SVG em preto para funcionar o filtro */
+            invert(70%) sepia(72%) saturate(358%) hue-rotate(37deg) brightness(88%) contrast(90%);
+        }
     }
 }
 
