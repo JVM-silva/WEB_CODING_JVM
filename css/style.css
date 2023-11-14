@@ -138,7 +138,7 @@ button {
     text-align: center;
 }
 
-.sub-menu > div {
+.sub-menu > div, .sub-menu > a {
     padding: 0 1vmin;
 
     display: flex;
@@ -156,6 +156,7 @@ button {
             /*
             filtro para mudar cor de svg via CSS.
             fonte: https://codepen.io/sosuke/pen/Pjoqqp
+            cor usada: --verde
             */
             filter: brightness(0) saturate(100%) /* transformar SVG em preto para funcionar o filtro */
             invert(70%) sepia(72%) saturate(358%) hue-rotate(37deg) brightness(88%) contrast(90%);
