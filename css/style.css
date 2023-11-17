@@ -170,10 +170,49 @@ button {
     padding-top: 0.5vmin;
 }
 
+.carrinho {
+    position: sticky;
+    margin-top: 2vmin;
+    margin-right: 2vmin;
+    top: 2vmin;
+}
+
+.carrinho #carrinho-link {
+    display: flex;
+    width: max-content;
+
+    padding: 0.75rem;
+    align-items: center;
+    border-radius: 15px;
+    gap: 1rem;
+
+    margin-left: auto;
+
+    background-color: var(--branco);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carrinho-texto {
+    font-family: Nunito;
+    font-size: 1.25rem;
+    color: var(--verde) !important;
+    text-align: end;
+    line-height: 1.25rem;
+}
+
+#carrinho-imagem {
+    width: 3rem;
+    height: auto;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
 .chatbot {
     display: flex;
-    width: 5rem;
-    height: 5rem;
+    width: 9vmin;
+    height: 9vmin;
     position: fixed;
     bottom: 2vmin;
     right: 2vmin;
@@ -201,10 +240,19 @@ button {
         display: none;
     }
 
+    #carrinho-imagem {
+        width: 8vmin;
+        padding: 1vmin;
+    }
+
+    .carrinho-texto {
+        display: none;
+    }
+
     .chatbot {
-        width: 15vmin;
-        height: 15vmin;
-        bottom: 5vmin;
-        right: 5vmin;
+        width: 10vmin;
+        height: 10vmin;
+        bottom: 2.5vmin;
+        right: 2.5vmin;
     }
 }
