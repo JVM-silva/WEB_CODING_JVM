@@ -46,14 +46,13 @@
 
 .conteudo-login {
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
+    width: 100vw;
+    height: 75vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     & > * {
         margin-top: 3vmin;
@@ -69,7 +68,7 @@
 }
 
 .form {
-    width: 25vw;
+    width: 50vw;
     padding: 2vmin 1.5vmin;
     border-radius: 2vmin;
 }
@@ -98,5 +97,31 @@ div > p:not(#login-txt) {
 }
 
 #criar-conta {
-    margin-top: 1vmin;
+    margin-top: 3vmin;
+}
+
+@media screen and (max-width: 500px) {
+    
+    #botao-voltar {
+        font-size: 1rem;
+    }
+
+    #setinha {
+        width: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .conteudo-login {
+        width: 100vw;
+    }
+
+    .form {
+        width: 65vw;
+        font-size: 1.1rem;
+        border: 3px solid var(--verde);
+    }
+
+    div > p:not(#login-txt) {
+        font-size: 1rem;
+    }
 }

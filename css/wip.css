@@ -33,3 +33,9 @@ h1 {
     
     color: var(--verde);
 }
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
