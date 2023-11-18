@@ -320,6 +320,7 @@ button {
     background-color: var(--verde);
 
     user-select: none;
+    pointer-events: none;
 }
 
 .produtos .nome {
