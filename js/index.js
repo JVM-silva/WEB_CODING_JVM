@@ -5,7 +5,20 @@ $(document).ready(function() {
     const cbCurr = $('#chatbot-current');
     const cbChat = $('.chatbot-chat');
 
-    cbBtn.on('click', () => {
+    $(document).on('click', e => {
+        const chat = $('.chatbot-chat')[0];
+        const isClickInside = chat.contains(e.target);
+        if (!isClickInside && cbOpened) {
+            cbBtn.trigger('click');
+        }
+    });
+
+    cbBtn.on('click', e => {
+
+        // impede a propagação do evento de clique
+        // (evitar que o chat se feche sozinho)
+        e.stopPropagation();
+
         // alterna a boolean
         cbOpened = !cbOpened;
         
