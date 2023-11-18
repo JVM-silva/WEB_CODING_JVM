@@ -240,6 +240,25 @@ button {
 
 /* =-=-=-=-=- CORPO -=-=-=-=-= */
 
+.divisor {
+    width: 90%;
+    height: 5px;
+
+    margin-block: 50px;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: repeating-linear-gradient(
+        to right,
+        var(--verde) 0,
+        var(--verde) 15px,
+        transparent 15px,
+        transparent 30px
+    );
+}
+
 /* =-=-=-=-=- PROMOÇÕES -=-=-=-=-= */
 .banner {
     position: relative;
@@ -340,6 +359,12 @@ button {
     font-size: 3rem;
     font-weight: bold;
     color: var(--verde);
+}
+
+.destaques #titulo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */

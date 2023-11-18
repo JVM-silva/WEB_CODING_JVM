@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
 });
 
-// if image doesn't load, make them unavaiable
+// se a imagem não carregar, trocar pelo placeholder
 function imgError(img) {
     img.onerror = '';
     img.src = './Imagens/IconesSite/produtoindisponivel.svg'
