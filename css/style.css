@@ -6,7 +6,7 @@
     --fundo: #FAFFF3;
     --branco: #FFFEF0;
     --preto: #28551c;
-    --cinza: #A6A6A6;
+    --cinza: #d3d2d2;
     --verde: #93C047;
     --verde-escuro: #76A63B;
 }
@@ -179,7 +179,7 @@ button {
     margin-top: 2vmin;
     top: 2vmin;
     right: 2vmin;
-    z-index: 10;
+    z-index: 3;
 }
 
 .carrinho #carrinho-link {
@@ -235,6 +235,82 @@ button {
         width: inherit;
         height: inherit;
         position: absolute;
+    }
+}
+
+.chatbot-chat {
+    position: fixed;
+    aspect-ratio: 10 / 15;
+    width: 270px;
+    right: 12vmin;
+    bottom: 10vmin;
+    
+    overflow: hidden;
+    display: none;
+
+    background-color: var(--branco);
+    border: 5px solid var(--verde);
+    border-radius: 20px;
+
+    z-index: 4;
+}
+
+.mensagens {
+    overflow-y: auto;
+    height: calc(100% - 70px);
+}
+
+.mensagens p {
+    font-family: Nunito;
+
+    margin: 10px 10px 0px 10px;
+
+    display: inline-block;
+    padding-block: 5px;
+    padding-inline: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.mensagens .suporte {
+    background-color: var(--cinza);
+    color: var(--preto);
+    border-radius: 2px 15px 15px 10px;
+    float: left;
+}
+
+.mensagens .cliente {
+    background-color: var(--verde);
+    color: var(--branco);
+    border-radius: 10px 2px 10px 10px;
+    text-align: end;
+    float: right;
+}
+
+.enviar-mensagem {
+    background-color: var(--branco);
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.enviar-mensagem #digitar {
+    width: 70%;
+    font-size: 1rem;
+    border: 3px solid var(--verde);
+}
+
+.enviar-mensagem #enviar {
+    width: 20%;
+
+    &:hover {
+        cursor: pointer;
     }
 }
 

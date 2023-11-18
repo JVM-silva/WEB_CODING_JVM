@@ -15,7 +15,7 @@
             <img class="logo" src="./imagens/IconesSite/logo.png" draggable="false">
             
             <div id="caixa-de-pesquisa">
-                <input id="input-header" placeholder="O que deseja?">
+                <input id="input-header" type="text" placeholder="O que deseja?">
                 <a href="./WIP.html" id="botao-lupa">
                     <img id="img-lupa" src="./imagens/IconesSite/lupa.svg" draggable="false">
                 </a>
@@ -87,8 +87,19 @@
         </section>
 
         <div class="chatbot">
-            <img id="chatbot-current" src="./Imagens/IconesSite/chatbot.svg" style="z-index: 1;" alt="chatbot" draggable="false">
+            <img id="chatbot-current" src="./Imagens/IconesSite/chatbot.svg" style="z-index: 1;" alt="chatbot" draggable="false" title="Suporte">
             <img id="chatbot-below" src="./Imagens/IconesSite/chatbotselecionado.svg" style="z-index: 0;" alt="chatbot" draggable="false">
+        </div>
+
+        <div class="chatbot-chat" data-chat-open="false">
+            <div class="mensagens">
+                <p class="suporte">Olá! em que posso ajudar?</p>
+                <div class="clear"></div>
+            </div>
+            <div class="enviar-mensagem">
+                    <input type="text" id="digitar" placeholder="Enviar mensagem...">
+                    <img type="image" id="enviar" src="./Imagens/IconesSite/enviar.svg" title="Enviar">
+            </div>
         </div>
     </body>
 </body>
