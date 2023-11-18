@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 :root {
-    --fundo: #F7FFF3;
+    --fundo: #FAFFF3;
     --branco: #FFFEF0;
     --preto: #28551c;
+    --cinza: #A6A6A6;
     --verde: #93C047;
     --verde-escuro: #76A63B;
-
 }
 
 * {
@@ -26,7 +26,7 @@
 html, body {
     max-width: 100%;
     overflow-x: clip;
-    background-color: var(--fundo);
+    background-color: var(--branco);
 }
 
 /* desativa cores da tag 'a' */
@@ -80,6 +80,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 
 .logo, #img-conta, #botao-conta {
@@ -170,11 +171,15 @@ button {
     padding-top: 0.5vmin;
 }
 
+/* =-=-=-=-=- CARRINHO -=-=-=-=-= */
+
 .carrinho {
     position: sticky;
+    float: right;
     margin-top: 2vmin;
-    margin-right: 2vmin;
     top: 2vmin;
+    right: 2vmin;
+    z-index: 10;
 }
 
 .carrinho #carrinho-link {
@@ -195,7 +200,7 @@ button {
 .carrinho-texto {
     font-family: Nunito;
     font-size: 1.25rem;
-    color: var(--verde) !important;
+    color: var(--verde);
     text-align: end;
     line-height: 1.25rem;
 }
@@ -205,9 +210,12 @@ button {
     height: auto;
 }
 
+
 .negrito {
     font-weight: bold;
 }
+
+/* =-=-=-=-=- CHATBOT -=-=-=-=-= */
 
 .chatbot {
     display: flex;
@@ -230,6 +238,110 @@ button {
     }
 }
 
+/* =-=-=-=-=- CORPO -=-=-=-=-= */
+
+/* =-=-=-=-=- PROMOÇÕES -=-=-=-=-= */
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    user-select: none;
+    margin-bottom: 30px;
+}
+
+#texto-promo {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+.produtos .produto {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.produtos .produto .desconto-imagem {
+    border: 5px solid var(--verde);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.desconto-imagem .imagem {
+    width: 200px;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    display: block;
+}
+
+.desconto-imagem .desconto {
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--branco);
+
+    padding-inline: 50px;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    position: absolute;
+    transform: rotate(-45deg) translate(-30px, -85%);
+    background-color: var(--verde);
+
+    user-select: none;
+}
+
+.produtos .nome {
+    font-family: Nunito;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--verde);
+    margin-left: 20px;
+}
+
+.produtos .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.precos {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.25rem;
+}
+
+.precos .preco-original {
+    font-family: Nunito;
+    font-size: 0.95rem;
+    font-weight: 200;
+    color: var(--cinza);
+}
+
+.preco-original > span {
+    text-decoration: line-through;
+}
+
+.precos .preco-novo {
+    font-family: Nunito;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--verde);
+}
+
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
 @media screen and (max-width: 500px) {
     .header {
@@ -245,8 +357,21 @@ button {
         padding: 1vmin;
     }
 
+    #carrinho-link {
+        padding: 0;
+    }
+
     .carrinho-texto {
         display: none;
+    }
+
+    .produto .nome, .precos .preco-novo {
+        font-size: 2rem;
+    }
+
+    .produto .precos {
+        line-height: 1.5rem;
+        align-items: center;
     }
 
     .chatbot {

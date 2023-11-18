@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    
     // chatbot botão
     var cbOpened = false;
     let cbBtn = $('.chatbot');
@@ -27,3 +26,9 @@ $(document).ready(function() {
         });
     });
 });
+
+// if image doesn't load, make them unavaiable
+function imgError(img) {
+    img.onerror = '';
+    img.src = './Imagens/IconesSite/produtoindisponivel.svg'
+}
