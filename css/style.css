@@ -9,6 +9,7 @@
     --cinza: #d3d2d2;
     --verde: #93C047;
     --verde-escuro: #76A63B;
+    --vermelho: #FF3C2E;
 }
 
 * {
@@ -180,6 +181,12 @@ button {
     top: 2vmin;
     right: 2vmin;
     z-index: 3;
+    
+    transition: transform 150ms ease;
+
+    &:hover {
+        transform: scale(110%);
+    }
 }
 
 .carrinho #carrinho-link {
@@ -356,7 +363,7 @@ button {
     z-index: 1;
 }
 
-.produtos .produto {
+.promocoes .produtos .produto {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -364,21 +371,21 @@ button {
     width: 100%;
 }
 
-.produtos .produto .desconto-imagem {
+.promocoes .produtos .produto .desconto-imagem {
     border: 5px solid var(--verde);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
 }
 
-.desconto-imagem .imagem {
+.promocoes  .desconto-imagem .imagem {
     width: 200px;
     aspect-ratio: 5 / 7;
     object-fit: cover;
     display: block;
 }
 
-.desconto-imagem .desconto {
+.promocoes  .desconto-imagem .desconto {
     font-family: Nunito;
     font-weight: bold;
     font-size: 25px;
@@ -399,7 +406,7 @@ button {
     pointer-events: none;
 }
 
-.produtos .nome {
+.promocoes .produtos .nome {
     font-family: Nunito;
     font-size: 3rem;
     font-weight: bold;
@@ -407,31 +414,31 @@ button {
     margin-left: 20px;
 }
 
-.produtos .texto {
+.promocoes .produtos .texto {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.precos {
+.promocoes .precos {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     line-height: 2.25rem;
 }
 
-.precos .preco-original {
+.promocoes .precos .preco-original {
     font-family: Nunito;
     font-size: 0.95rem;
     font-weight: 200;
     color: var(--cinza);
 }
 
-.preco-original > span {
+.promocoes .preco-original > span {
     text-decoration: line-through;
 }
 
-.precos .preco-novo {
+.promocoes .precos .preco-novo {
     font-family: Nunito;
     font-size: 3rem;
     font-weight: bold;
@@ -467,12 +474,12 @@ button {
         display: none;
     }
 
-    .produto .nome, .precos .preco-novo {
+    .promocoes .produto .nome, .promocoes .precos .preco-novo {
         font-size: 2rem;
     }
 
-    .produto .precos {
-        line-height: 1.5rem;
+    .promocoes .produto .precos {
+        line-height: 1.75rem;
         align-items: center;
     }
 

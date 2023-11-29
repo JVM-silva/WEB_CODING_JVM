@@ -1,11 +1,12 @@
 $(document).ready(function() {
+    
     // chatbot botão
     var cbOpened = false;
     const cbBtn = $('.chatbot');
     const cbCurr = $('#chatbot-current');
     const cbChat = $('.chatbot-chat');
 
-    $(document).on('click', e => {
+    $(document).on('click', (e) => {
         const chat = $('.chatbot-chat')[0];
         const isClickInside = chat.contains(e.target);
         if (!isClickInside && cbOpened) {
@@ -13,29 +14,26 @@ $(document).ready(function() {
         }
     });
 
-    cbBtn.on('click', e => {
-
+    cbBtn.on('click', (e) => {
         // impede a propagação do evento de clique
         // (evitar que o chat se feche sozinho)
         e.stopPropagation();
 
-        // alterna a boolean
-        cbOpened = !cbOpened;
-        
-        // pega a imagem que deve ser trocada
-        let selectedPath = './Imagens/IconesSite/chatbot.svg';
+        let path = './Imagens/IconesSite/chatbot.svg';
         const time = 150; // duração da animação, em milissegundos.
+
+        cbOpened = !cbOpened;
         if (cbOpened) {
-            selectedPath = './Imagens/IconesSite/chatbotselecionado.svg';
+            path = './Imagens/IconesSite/chatbotselecionado.svg';
             cbChat.slideDown(time);
         } else {
             cbChat.slideUp(time);
         }
         
         // troca a imagem
-        $('#chatbot-below').attr('src', selectedPath);
+        $('#chatbot-below').attr('src', path);
         cbCurr.fadeOut(time, () => {
-            cbCurr.attr('src', selectedPath);
+            cbCurr.attr('src', path);
             cbCurr.fadeIn(0);
         });
 
@@ -43,26 +41,43 @@ $(document).ready(function() {
         cbChat.attr('data-chat-open', `${cbOpened}`);
     });
 
-    const hasLetter = txt => {
+    const hasLetter = (txt) => {
         return /[a-ç0-9]/i.test(txt);
     }
 
-    const enviarMensagem = msg => {
+    const enviarMensagem = (msg, sender = 0) => {
+        // sender -> 0 = cliente, 1 = suporte
+        const msgClass = sender == 0 ? 'cliente' : 'suporte',
+              numMsgSuporte = $('.suporte').length;
+
+        // Se já tiver uma mensagem de erro
+        if (sender == 1 && numMsgSuporte != 1) return;
+        
         // se a mensagem for vazia, sair da função
-        if (msg === undefined || !hasLetter(msg)) return;
+        if (msg === undefined) return;
+        if (!hasLetter(msg)) { $('.enviar-mensagem #digitar').val(''); return; }
 
         const container = $('.mensagens');
         
         // criar o elemento de mensagem
-        const element = $('<p></p>').addClass('cliente').text(msg);
+        const element = $('<p></p>').addClass(msgClass).text(msg);
         
         // colocar ele no documento
         container.append(element);
-        element.css({opacity: 0, marginRight: 0});
-        element.animate({
-            opacity: 1,
-            marginRight: 10
-        }, {duration: 150});
+
+        if (sender == 0) {
+            element.css({opacity: 0, marginRight: 0});
+            element.animate({
+                opacity: 1,
+                marginRight: 10
+            }, {duration: 150});
+        } else {
+            element.css({opacity: 0, marginLeft: 0});
+            element.animate({
+                opacity: 1,
+                marginLeft: 10
+            }, {duration: 150});
+        }
 
         // colocar uma quebra para que a próxima mensagem
         // não fique do lado da atual
@@ -71,6 +86,10 @@ $(document).ready(function() {
 
         // limpar a caixa de texto
         $('.enviar-mensagem #digitar').val('');
+
+        if (numMsgSuporte == 1) {
+            setTimeout(enviarMensagem, 500, 'Desculpe, o suporte não está disponível no momento.', 1);
+        }
     }
 
     const chatInput = $('.enviar-mensagem #digitar'),

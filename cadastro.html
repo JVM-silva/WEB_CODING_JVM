@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/login.css">
         <script src="./js/jquery-3.7.1.js"></script>
-        <script src="./js/index.js"></script>
+        <script src="./js/cadastro.js"></script>
         <title>Tropic-Flores</title>
     </head>
 <body>
@@ -26,11 +26,16 @@
         </a>
         <div class="conteudo-login">
             <p id="login-txt">CADASTRO</p>
-            <input class="form" type="text" placeholder="E-mail">
-            <input class="form" type="text" placeholder="CPF">
-            <input class="form" type="password" placeholder="Senha">
-            <input class="form" type="password" placeholder="Confirme a senha">
-            <a href="./login.html"><button id="botao-login">CRIAR CONTA</button></a>
+            <p id="already-exists" style="color: var(--vermelho); font-family: Nunito; display: none;">
+                Usuário já cadastrado.
+            </p>
+            <form action="/login.html" onsubmit="return false;" id="form-cadastro">
+                <input id="email" class="form" type="text" placeholder="E-mail">
+                <input id="cpf" class="form" type="text" placeholder="CPF">
+                <input id="password" class="form" type="password" placeholder="Senha">
+                <input id="confirm-password" class="form" type="password" placeholder="Confirme a senha">
+                <button type="submit" id="botao-login">CRIAR CONTA</button>
+            </form>
             <p id="esqueceu-senha" selectable="false">Já tem uma conta? <span class="negrito"><a href="./login.html">Entre aqui!</a></span></p>
         </div>
     </section>

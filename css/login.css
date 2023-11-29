@@ -67,6 +67,14 @@
     cursor: default;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .form {
     width: 50vw;
     padding: 2vmin 1.5vmin;
