@@ -118,6 +118,8 @@ div > p:not(#login-txt) {
 #lembrar-de-mim label {
     color: var(--verde-escuro);
     font-family: Nunito;
+    font-weight: 500;
+    font-size: 1.15rem;
 }
 
 @media screen and (max-width: 500px) {

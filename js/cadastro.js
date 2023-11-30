@@ -26,7 +26,8 @@ $(document).ready(function () {
     $('#botao-login').on('click', () => {
         $('#form-cadastro input').trigger('click');
 
-        let invalid = false;
+        let invalid = false,
+            dados = [];
 
         $('#form-cadastro input').each((i, e) => {
             $e = $(e);
@@ -46,16 +47,23 @@ $(document).ready(function () {
             return;
         }
 
-        let dados = [];
         if (localStorage.getItem('credenciais') != null) {
             dados = JSON.parse(localStorage.getItem('credenciais'));
+            
+            for (x in dados) {
+                if (dados[x].email == $('#email').val()) {
+                    showError('Já existe uma conta neste e-mail.');
+                    $('#email').css('border-color', borderRed);
+                    return;
+                }
+            }
         }
 
         const dadosObj = {
             'email': $('#email').val(),
             'cpf': $('#cpf').val(),
             'senha': $('#password').val(),
-            'tipo': 'comum'
+            'tipo': 'usuario'
         };
         dados.push(dadosObj);
         localStorage.setItem('credenciais', JSON.stringify(dados));
