@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    
+    const borderRed = getComputedStyle(document.body).getPropertyValue('--vermelho'),
+          borderGreen = getComputedStyle(document.body).getPropertyValue('--verde');
+
     const hasLetter = (txt) => {
         return /[a-ç0-9]/i.test(txt);
     }
@@ -9,6 +11,17 @@ $(document).ready(function () {
         $('#error').css('display', 'block');
     }
     
+    // fonte: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+    const rgbToHex = (rgb) => {
+        const rgbArr = rgb.substring(4, rgb.length-1)
+                          .replace(/ /g, '')
+                          .split(','),
+              r = rgbArr[0],
+              g = rgbArr[1],
+              b = rgbArr[2];
+        
+         return ('#' + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1)).toUpperCase();
+    }
 
     $('#botao-login').on('click', () => {
         $('#form-cadastro input').trigger('click');
@@ -18,7 +31,7 @@ $(document).ready(function () {
         $('#form-cadastro input').each((i, e) => {
             $e = $(e);
             if (!hasLetter($e.val())) {
-                $e.css('border', '3px solid var(--vermelho)');
+                $e.css('border-color', borderRed);
                 invalid = true;
             }
         });
@@ -29,7 +42,7 @@ $(document).ready(function () {
 
         if ($('#password').val() != $('#confirm-password').val()) {
             showError('Verifique se a senha está correta');
-            $('#confirm-password').css('border', '3px solid var(--vermelho)');
+            $('#confirm-password').css('border-color', borderRed);
             return;
         }
 
@@ -50,9 +63,9 @@ $(document).ready(function () {
 
     $('#form-cadastro input').each((i, e) => {
         $(e).on('click', () => {
-            if ($(e).css('border') === '3px solid var(--vermelho)') {
+            if (rgbToHex($(e).css('border-color')) == borderRed) {
                 $('#error').css('display', 'none');
-                $(e).css('border', '3px solid var(--verde)');
+                $(e).css('border-color', borderGreen);
             }
         });
     });
