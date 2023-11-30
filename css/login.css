@@ -108,6 +108,18 @@ div > p:not(#login-txt) {
     margin-top: 3vmin;
 }
 
+#lembrar-de-mim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#lembrar-de-mim label {
+    color: var(--verde-escuro);
+    font-family: Nunito;
+}
+
 @media screen and (max-width: 500px) {
     
     #botao-voltar {

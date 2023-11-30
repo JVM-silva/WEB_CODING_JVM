@@ -54,7 +54,8 @@ $(document).ready(function () {
         const dadosObj = {
             'email': $('#email').val(),
             'cpf': $('#cpf').val(),
-            'senha': $('#password').val()
+            'senha': $('#password').val(),
+            'tipo': 'comum'
         };
         dados.push(dadosObj);
         localStorage.setItem('credenciais', JSON.stringify(dados));

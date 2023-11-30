@@ -1,5 +1,16 @@
 $(document).ready(function() {
-    
+    if (localStorage.getItem('loginSalvo') != null) {
+        sessionStorage.setItem('login', localStorage.getItem('loginSalvo'));
+    }
+
+    $('#botao-conta').on('click', () => {
+        if (sessionStorage.getItem('login') == null) {
+            location.href = 'login.html';
+            return;
+        }
+        location.href = 'conta.html';
+    });
+
     // chatbot botão
     var cbOpened = false;
     const cbBtn = $('.chatbot');

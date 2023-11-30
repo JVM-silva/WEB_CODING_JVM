@@ -42,6 +42,10 @@ $(document).ready(function () {
             if (dados[x].email == $('#email').val()) {
                 if (dados[x].senha == $('#senha').val()) {
                     valid = true;
+                    if ($('#lembrar')[0].checked) {
+                        localStorage.setItem('loginSalvo', JSON.stringify(dados[x]));
+                    }
+                    sessionStorage.setItem('login', JSON.stringify(dados[x]));
                     break;
                 }
             }
