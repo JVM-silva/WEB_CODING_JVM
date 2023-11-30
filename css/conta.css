@@ -5,7 +5,41 @@
     margin-left: 10vmin
 }
 
+body {
+    position: relative;
+}
+
 .header > a {
     display: flex;
     align-items: center;
+}
+
+#titulo {
+    font-family: Koulen;
+    color: var(--verde);
+    font-size: 3rem;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+.dados {
+    font-family: Nunito;
+    color: var(--verde-escuro);
+}
+
+.dados span {
+    font-weight: normal;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.perigo {
+    background-color: var(--vermelho);
 }
