@@ -53,6 +53,8 @@ $(document).ready(function () {
 
         if (!valid) {
             showError('E-mail ou senha incorretos');
+            $('#email').css('border-color', borderRed);
+            $('#senha').css('border-color', borderRed);
             return;
         }
 
