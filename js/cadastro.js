@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     const borderRed = getComputedStyle(document.body).getPropertyValue('--vermelho'),
           borderGreen = getComputedStyle(document.body).getPropertyValue('--verde');
 
@@ -63,7 +64,7 @@ $(document).ready(function () {
             'email': $('#email').val(),
             'cpf': $('#cpf').val(),
             'senha': $('#password').val(),
-            'tipo': 'usuario'
+            'tipo': $('#email').val() == 'admin' ? 'admin' : 'usuario'
         };
         dados.push(dadosObj);
         localStorage.setItem('credenciais', JSON.stringify(dados));
