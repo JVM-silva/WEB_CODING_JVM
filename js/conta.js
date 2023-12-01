@@ -52,6 +52,11 @@ $(document).ready(function () {
         $('#deslogar').trigger('click');
     });
 
+    $('#apagar-produtos').on('click', () => {
+        localStorage.removeItem('produtos');
+        $('.produtos div').remove();
+    });
+
     $('#deslogar').on('click', () => {
         localStorage.removeItem('loginSalvo');
         sessionStorage.removeItem('login');
