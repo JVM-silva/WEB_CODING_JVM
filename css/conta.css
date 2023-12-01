@@ -58,6 +58,7 @@ button {
 
 .produto {
     border: 3px solid var(--verde);
+    border-radius: 15px;
     padding: 10px;
     font-family: Nunito;
     color: var(--verde-escuro);
@@ -72,6 +73,10 @@ button {
     aspect-ratio: 10 / 13;
     display: inline-block;
     object-fit: cover;
+}
+
+.produto img:not(.lapis):not(.lixeira) {
+    border-radius: 15px;
 }
 
 .options > img {
