@@ -2,7 +2,7 @@ $(document).ready(function () {
     const borderRed = getComputedStyle(document.body).getPropertyValue('--vermelho'),
           borderGreen = getComputedStyle(document.body).getPropertyValue('--verde');
 
-    // fonte: // fonte: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+    // fonte: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
     const rgbToHex = (rgb) => {
         const rgbArr = rgb.substring(4, rgb.length-1)
                           .replace(/ /g, '')

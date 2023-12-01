@@ -91,6 +91,10 @@ form {
     &:hover {
         transform: scale(110%);
     }
+
+    &:active {
+        transform: scale(95%);
+    }
 }
 
 div > p:not(#login-txt) {

@@ -24,6 +24,18 @@ body {
     font-weight: bold;
 }
 
+button {
+    transition: transform 150ms ease;
+
+    &:hover {
+        transform: scale(105%);
+    }
+
+    &:active {
+        transform: scale(95%);
+    }
+}
+
 .dados {
     font-family: Nunito;
     color: var(--verde-escuro);
@@ -42,4 +54,92 @@ body {
 
 .perigo {
     background-color: var(--vermelho);
+}
+
+.produto {
+    border: 3px solid var(--verde);
+    padding: 10px;
+    font-family: Nunito;
+    color: var(--verde-escuro);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.produto img {
+    width: 240px;
+    aspect-ratio: 10 / 13;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.options > img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+}
+
+.lapis {
+    /*
+    fonte: https://codepen.io/sosuke/pen/Pjoqqp
+    cor usada: --verde-escuro
+    filtro para mudar cor de svg via CSS.
+    */
+    filter: brightness(0) saturate(100%) /* transformar SVG em preto para funcionar o filtro */
+    invert(53%) sepia(48%) saturate(502%) hue-rotate(45deg) brightness(100%) contrast(94%);
+}
+
+.lixeira {
+    /*
+    fonte: https://codepen.io/sosuke/pen/Pjoqqp
+    cor usada: --verde-escuro
+    filtro para mudar cor de svg via CSS.
+    */
+    filter: brightness(0) saturate(100%) /* transformar SVG em preto para funcionar o filtro */
+    invert(53%) sepia(48%) saturate(502%) hue-rotate(45deg) brightness(100%) contrast(94%);
+}
+
+.info-below-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produtos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-inline: 50px;
+}
+
+#add-product {
+    height: max-content;
+}
+
+.form-editando {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-editando div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-editando input {
+    font-size: 1rem;
+    padding-inline: 5px;
+    padding-block: 5px;
+    border-radius: 10px;
 }
