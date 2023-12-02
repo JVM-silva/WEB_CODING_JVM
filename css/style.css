@@ -524,6 +524,7 @@ button {
 }
 
 .searchbox-div {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -554,7 +555,49 @@ button {
     background-color: transparent;
     border-radius: 0px;
 }
-  
+
+.footer {
+    margin-top: 40px;
+    background-color: var(--verde);
+    font-family: "Nunito Sans";
+    color: var(--branco);
+
+    cursor: default;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-inline: 100px;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-content .titulo {
+    font-weight: bold;
+    font-size: 1.1rem
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.redes-container {
+    display: flex;
+    align-items: center;
+    gap: calc(100% / 16);
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 20px;
+}
+
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
 @media screen and (max-width: 750px) {
     .header {
