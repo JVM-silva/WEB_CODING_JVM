@@ -73,7 +73,7 @@ $(document).ready(function () {
               inputName = $('<input></input>').attr('type', 'text'),
               priceDiv = $('<div></div>').addClass('preco'),
               priceLabel = $('<label></label>').text('Preço'),
-              inputPrice = $('<input></input>').attr('type', 'text')
+              inputPrice = $('<input></input>').attr('type', 'number')
               imgDiv = $('<div></div>').addClass('imagem'),
               imgLabel = $('<label></label>').text('Imagem'),
               inputImg = $('<input></input>').attr({type: 'text', placeholder: 'URL...'}),
