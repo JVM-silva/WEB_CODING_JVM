@@ -15,9 +15,7 @@
             
             <div id="caixa-de-pesquisa">
                 <input id="input-header" type="text" placeholder="O que deseja?">
-                <a href="./WIP.html" id="botao-lupa">
-                    <img id="img-lupa" src="./imagens/IconesSite/lupa.svg" draggable="false">
-                </a>
+                <img id="lupa-header" src="./imagens/IconesSite/lupa.svg" draggable="false">
             </div>
             
             <div class="conta">
@@ -175,9 +173,9 @@
             </div>
 
             <div class="searchbox-div">
-                <form class="searchbox">
-                    <input type="text" placeholder="Procure aqui!" />
-                    <input type="image" src="./Imagens/IconesSite/lupa.svg" draggable="false"/>
+                <form class="searchbox" onsubmit="return false;">
+                    <input id="search-footer" type="text" placeholder="Procure aqui!" />
+                    <input id="lupa-footer" type="image" src="./Imagens/IconesSite/lupa.svg" draggable="false"/>
                 </form>
             </div>
         </section>

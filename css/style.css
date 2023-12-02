@@ -99,6 +99,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: end;
+    position: relative;
 }
 
 #caixa-de-pesquisa > input {
@@ -107,15 +108,15 @@ button {
     border: none;
 }
 
-#botao-lupa {
+#lupa-header {
     position: absolute;
-}
-
-#img-lupa {
-    position: absolute;
-    top: -1.7vmin;
+    top: 0.5vmin;
     right: 0.6vmin;
     width: 3.5vmin;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 /* conta */
@@ -462,8 +463,9 @@ button {
 .destaques .produtos {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 10vmin;
     flex-wrap: wrap;
+    margin-inline: 4vmin;
 }
 
 .destaques .produto, .destaques .produto .texto a {
@@ -550,7 +552,7 @@ button {
     width: calc(100% - 25px);
     height: 35px;
     border: 3px solid var(--verde);
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding-right: 45px;
 }
   

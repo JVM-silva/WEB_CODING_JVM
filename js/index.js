@@ -115,6 +115,26 @@ $(document).ready(function() {
     chatSend.on('click', () => {
         enviarMensagem(chatInput.val());
     });
+
+    $('#input-header').on('keyup', (e) => {
+        if (e.key === 'Enter' || e.keycode === 13) {
+            location.href = 'WIP.html';
+        }
+    });
+
+    $('#lupa-header').on('click', () => {
+        location.href = 'WIP.html';
+    });
+
+    $('#search-footer').on('keyup', (e) => {
+        if (e.key === 'Enter' || e.keycode === 13) {
+            location.href = 'WIP.html';
+        }
+    });
+
+    $('#lupa-footer').on('click', () => {
+        location.href = 'WIP.html';
+    });
 });
 
 // se a imagem não carregar, trocar pelo placeholder
