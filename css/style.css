@@ -236,6 +236,7 @@ button {
 
     &:hover {
         transform: scale(110%);
+        cursor: pointer;
     }
 
     & > img {
@@ -343,7 +344,7 @@ button {
 }
 
 /* =-=-=-=-=- PROMOÇÕES -=-=-=-=-= */
-.banner {
+.promocoes > .banner {
     position: relative;
     display: flex;
     justify-content: center;
@@ -449,16 +450,85 @@ button {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: 50px;
+}
+
+.destaques .produtos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.destaques .produto, .destaques .produto .texto a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-family: Nunito;
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.destaques .produto .texto a {
+    gap: 0px;
+}
+
+.destaques .produto .imagem {
+    width: 175px;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    display: block;
+    border: 5px solid var(--verde);
+    border-radius: 10px;
+}
+
+.categorias .titulo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.itens-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-inline: 10%;
+}
+
+.itens-categorias div {
+    background-color: var(--verde);
+    padding-inline: 30px;
+    border-radius: 10px;
+    
+    font-family: Koulen;
+    font-size: 2rem;
+    color: var(--branco);
+
+    user-select: none;
+    transition: transform 150ms ease;
+    &:hover {
+        transform: scale(110%);
+    }
 }
 
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
     .header {
         height: 15vmin;
     }
 
     .sub-menu {
         display: none;
+    }
+
+    .promocoes > .banner {
+        transform: scale(80%);
     }
 
     #carrinho-imagem {
@@ -475,7 +545,7 @@ button {
     }
 
     .promocoes .produto .nome, .promocoes .precos .preco-novo {
-        font-size: 2rem;
+        font-size: 1.5em;
     }
 
     .promocoes .produto .precos {
@@ -483,10 +553,30 @@ button {
         align-items: center;
     }
 
+    .promocoes .produtos .texto {
+        justify-content: center;
+    }
+
+    .promocoes .produtos .precos,
+    .promocoes .produtos .nome {
+        margin-left: 0;
+    }
+
+    .promocoes .produtos .produto {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .chatbot {
-        width: 10vmin;
-        height: 10vmin;
-        bottom: 2.5vmin;
-        right: 2.5vmin;
+        width: 12vmin;
+        height: 12vmin;
+        bottom: 4vmin;
+        right: 4vmin;
+    }
+
+    .chatbot-chat {
+        bottom: 17vmin;
+        right: 14vmin;
     }
 }

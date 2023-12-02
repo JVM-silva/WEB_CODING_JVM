@@ -24,6 +24,37 @@ body {
     font-weight: bold;
 }
 
+
+#botao-voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: 2rem 1rem;
+
+    font-family: Nunito;
+    font-size: 1.5rem;
+    color: var(--verde-escuro);
+
+    &:hover > #setinha{
+        transform: rotate(90deg) translateY(0.5rem);
+    }
+}
+
+#setinha {
+    /*
+    filtro para mudar cor de svg via CSS.
+    fonte: https://codepen.io/sosuke/pen/Pjoqqp
+    cor usada: --verde-escuro
+    */
+    filter: brightness(0) saturate(100%) /* transformar SVG em preto para funcionar o filtro */
+    invert(61%) sepia(47%) saturate(470%) hue-rotate(45deg) brightness(86%) contrast(102%);
+    transform: rotate(90deg);
+    width: 1.25rem;
+    margin-right: 1rem;
+    transition: transform 0.1s ease-in-out;
+}
+
 button {
     transition: transform 150ms ease;
 
@@ -58,7 +89,7 @@ button {
 
 .produto {
     border: 3px solid var(--verde);
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 10px;
     font-family: Nunito;
     color: var(--verde-escuro);
@@ -70,13 +101,13 @@ button {
 
 .produto img {
     width: 240px;
-    aspect-ratio: 10 / 13;
+    aspect-ratio: 10 / 13; /* 5x6.5 */
     display: inline-block;
     object-fit: cover;
 }
 
 .produto img:not(.lapis):not(.lixeira) {
-    border-radius: 15px;
+    border-radius: inherit;
 }
 
 .options > img {
@@ -147,4 +178,16 @@ button {
     padding-inline: 5px;
     padding-block: 5px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    
+    #botao-voltar {
+        font-size: 1rem;
+    }
+
+    #setinha {
+        width: 1rem;
+        margin-right: 0.5rem;
+    }
 }
