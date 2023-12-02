@@ -517,6 +517,44 @@ button {
     }
 }
 
+.procurar .titulo {
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbox-div {
+    display: flex;
+    justify-content: center;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+
+    position: relative;
+    flex-grow: 0.5;
+}
+  
+.searchbox input[type="text"] {
+    width: calc(100% - 25px);
+    height: 35px;
+    border: 3px solid var(--verde);
+    font-size: 1rem;
+    padding-right: 45px;
+}
+  
+.searchbox input[type="image"] {
+    position: absolute;
+    right: -15px;
+    border: none;
+    background-color: transparent;
+    border-radius: 0px;
+}
+  
 /* =-=-=-=-=- RESPONSIVIDADE -=-=-=-=-= */
 @media screen and (max-width: 750px) {
     .header {
@@ -578,5 +616,9 @@ button {
     .chatbot-chat {
         bottom: 17vmin;
         right: 14vmin;
+    }
+
+    .procurar .titulo {
+        transform: scale(70%);
     }
 }
