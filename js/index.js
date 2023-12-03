@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     if (localStorage.getItem('loginSalvo') != null) {
         sessionStorage.setItem('login', localStorage.getItem('loginSalvo'));
     }
@@ -11,7 +12,24 @@ $(document).ready(function() {
         location.href = 'conta.html';
     });
 
-    // chatbot botão
+    let produtos = JSON.parse(localStorage.getItem('produtos'));
+    if (produtos != null) {
+        for (let i = 0; i < produtos.length; ++i) {
+            if (i == 0) {
+                let randomPrice = 0;
+                do {
+                    randomPrice = Math.floor(Math.random() * produtos[i].preco * 3);
+                } while (randomPrice < produtos[i].preco);
+
+                $('.preco-original span').text(randomPrice);
+                $('.desconto .valor').text(100 - (Math.floor((produtos[i].preco / randomPrice) * 100)));
+            }
+            $('.produto .nome')[i].innerHTML = produtos[i].nome;
+            $('.produto .imagem')[i].src = produtos[i].img;
+            $('.produto .preco span')[i].innerHTML = produtos[i].preco;
+        }
+    }
+
     var cbOpened = false;
     const cbBtn = $('.chatbot');
     const cbCurr = $('#chatbot-current');
