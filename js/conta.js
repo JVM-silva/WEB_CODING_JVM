@@ -63,7 +63,10 @@ $(document).ready(function () {
         location.href = 'index.html';
     });
 
+    var editando = false;
     const editarProduto = (obj = undefined, name = undefined, price = undefined, img = undefined) => {
+        if (editando) return;
+
         const novoObj = (obj == undefined);
 
         const container = $('<div></div>').addClass('produto').addClass('editando'),
@@ -163,6 +166,7 @@ $(document).ready(function () {
                 $('#add-product').css('display', 'inline-block');
                 localStorage.setItem('produtos', JSON.stringify(dadosProdutos));
             }
+            editando = false;
         });
 
         btnCancel.on('click', () => {
@@ -175,6 +179,7 @@ $(document).ready(function () {
                 container.remove();
                 $('#add-product').css('display', 'inline-block');
             }
+            editando = false;
         });
 
         if (novoObj) {
@@ -224,6 +229,7 @@ $(document).ready(function () {
 
         pEdit.on('click', () => {
             editarProduto(produto, pName.text(), produto.find($('.preco')).text(), imgElement.attr('src'));
+            editando = true;
         });
 
         pDelete.on('click', () => {
@@ -233,6 +239,7 @@ $(document).ready(function () {
 
     $('#add-product').on('click', () => {
         editarProduto();
+        editando = true;
     });
 
     const deletarProduto = (obj) => {
