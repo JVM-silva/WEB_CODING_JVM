@@ -128,6 +128,15 @@ $(document).ready(function () {
             let imgSrc = './Imagens/IconesSite/produtoindisponivel.svg';
             if (hasLetter(inputImg.val())) { imgSrc = inputImg.val(); }
 
+            const preco = parseFloat(
+                              Number(inputPrice.val())
+                              .toFixed(2)
+                          )
+                          .toLocaleString('pt-BR', {
+                              style: 'decimal',
+                              minimumFractionDigits: 2
+                          });
+
             if (novoObj) {
                 adicionarProduto(inputName.val(), inputPrice.val(), inputImg.val());
                 $(container).remove();
@@ -136,14 +145,13 @@ $(document).ready(function () {
                 if (dadosProdutos == null) { dadosProdutos = []; }
                 const produto = {
                     nome: inputName.val(),
-                    preco: inputPrice.val(),
+                    preco: preco,
                     img: imgSrc
                 }
                 dadosProdutos.push(produto);
                 localStorage.setItem('produtos', JSON.stringify(dadosProdutos));
             }
             else {
-                console.log('não novo');
                 let dadosProdutos = JSON.parse(localStorage.getItem('produtos'));
                 if (dadosProdutos == null) {
                     alert('Não foi possível editar, tente remover e adicionar o produto novamente.');
@@ -153,13 +161,13 @@ $(document).ready(function () {
                     if (dadosProdutos[x].nome == obj.find('.nome').text()) {
                         
                         dadosProdutos[x].nome = inputName.val();
-                        dadosProdutos[x].preco = inputPrice.val();
+                        dadosProdutos[x].preco = preco;
                         dadosProdutos[x].img = imgSrc;
                         break;
                     }
                 }
                 obj.find('.nome').text(inputName.val());
-                obj.find('.preco').text(inputPrice.val());
+                obj.find('.preco').text(preco);
                 obj.find('> img').attr('src', imgSrc);
                 obj.toggle();
                 container.remove();
@@ -228,7 +236,7 @@ $(document).ready(function () {
         }
 
         pEdit.on('click', () => {
-            editarProduto(produto, pName.text(), produto.find($('.preco')).text(), imgElement.attr('src'));
+            editarProduto(produto, pName.text(), parseFloat(produto.find($('.preco')).text().replace(',', '.')), imgElement.attr('src'));
             editando = true;
         });
 
