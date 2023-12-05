@@ -21,12 +21,13 @@ $(document).ready(function() {
 
             if (i == 0) {
                 let randomPrice = 0;
+                const precoFloat = parseFloat(produtos[i].preco);
                 do {
-                    randomPrice = Math.floor(Math.random() * produtos[i].preco * 3);
-                } while (randomPrice < produtos[i].preco);
+                    randomPrice = Math.random() * precoFloat * 3;
+                } while (randomPrice < precoFloat);
 
-                $('.preco-original span').text(randomPrice);
-                $('.desconto .valor').text(100 - (Math.floor((produtos[i].preco / randomPrice) * 100)));
+                $('.preco-original span').text(randomPrice.toFixed(2).toString().replace('.', ','));
+                $('.desconto .valor').text(100 - (Math.floor((precoFloat / randomPrice) * 100)));
                 $('.produto .nome')[i].innerHTML = produtos[i].nome.toUpperCase();
             }
         }
