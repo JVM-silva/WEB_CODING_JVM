@@ -15,6 +15,10 @@ $(document).ready(function() {
     let produtos = JSON.parse(localStorage.getItem('produtos'));
     if (produtos != null) {
         for (let i = 0; i < produtos.length; ++i) {
+            $('.produto .nome')[i].innerHTML = produtos[i].nome;
+            $('.produto .imagem')[i].src = produtos[i].img;
+            $('.produto .preco span')[i].innerHTML = produtos[i].preco;
+
             if (i == 0) {
                 let randomPrice = 0;
                 do {
@@ -23,10 +27,8 @@ $(document).ready(function() {
 
                 $('.preco-original span').text(randomPrice);
                 $('.desconto .valor').text(100 - (Math.floor((produtos[i].preco / randomPrice) * 100)));
+                $('.produto .nome')[i].innerHTML = produtos[i].nome.toUpperCase();
             }
-            $('.produto .nome')[i].innerHTML = produtos[i].nome;
-            $('.produto .imagem')[i].src = produtos[i].img;
-            $('.produto .preco span')[i].innerHTML = produtos[i].preco;
         }
     }
 
